@@ -3,7 +3,7 @@ import './App.css';
 
 export default function App() {
 
-  //to get 2 different random number
+  //to get 2 different random number 1 -100
   let randomizerA = Math.floor(Math.random() * 100) + 1;
   let randomizerB = Math.floor(Math.random() * 100) + 1;
 
@@ -40,7 +40,7 @@ export default function App() {
     setChoices("Lower");
       if(Number(randomA) > Number(randomB)){
         setNote("You Win! The 2nd Number is lower than the 1st Number.");
-        setOut("Better Luck Next Time");
+        setOut("Another Round?");
         setHide(true);
       }
       else if(Number(randomA) < Number(randomB)){
