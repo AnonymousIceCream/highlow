@@ -67,11 +67,11 @@ export default function App() {
         <div className="top">
           <h1><span>Numbers Game: Higher or Lower</span></h1>
           <h3>Mechanics</h3>
-          <p>
+          <h5>
             The player will be shown a number and he/she has <br/>
             to guess if the 2nd is higher or lower than the first.<br/>
             The numbers range from 1 - 100.
-          </p>
+          </h5>
         </div>
 
         <div className="bot">
