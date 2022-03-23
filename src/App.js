@@ -63,36 +63,41 @@ export default function App() {
   return (
     <div>
       {/* div for title and mechanics */}
-      <div className="top">
-        <h1>Numbers Game: Higher or Lower</h1>
-        <h3>Mechanics</h3>
-        <h5>
-          The player will be shown a number and he/she has <br/>
-          to guess if the 2nd is higher or lower than the first.<br/>
-          The numbers range from 1 - 100.
-        </h5>
-      </div>
-
-      {/* div for choices */}
-      <div className="left">
-        <p>The 1st Random Number is <u>{randomA}</u></p>
-        <button hidden = {hide} onClick={higherChoice}>Higher</button>
-        <button hidden = {hide} onClick={lowerChoice}>Lower</button>
-        {hide &&
-          <button onClick= {newGame}>Try Again</button>
-        }
-      </div>
-
-      {/* div for output messages */}
-      <div className="right">
-        {hide &&
+      <div className="mainbody">
+        <div className="top">
+          <h1><span>Numbers Game: Higher or Lower</span></h1>
+          <h3>Mechanics</h3>
           <p>
-            Your choice is {choices}<br/>
-            The 2nd Random Number is {randomB}<br/>
-            {note}<br/>
-            {out}
+            The player will be shown a number and he/she has <br/>
+            to guess if the 2nd is higher or lower than the first.<br/>
+            The numbers range from 1 - 100.
           </p>
-        }
+        </div>
+
+        <div className="bot">
+          {/* div for choices */}
+          <div className="left">
+            <p><span>The 1st Random Number is <u>{randomA}</u></span></p>
+            <button hidden = {hide} onClick={higherChoice} className="btn">Higher</button>
+            <button hidden = {hide} onClick={lowerChoice} className="btn">Lower</button>
+            {hide &&
+              <button onClick= {newGame} className="btn2">Try Again</button>
+            }
+          </div>
+          <div className="mid"></div>
+          {/* div for output messages */}
+          <div className="right">
+            <p hidden = {hide}><span>Make Your Choice</span></p>
+            {hide &&
+              <div className="inright"><p>
+                Your choice was {choices}.<br/>
+                The 2nd Random Number was {randomB}.<br/>
+                {note}<br/>
+                {out}  
+              </p></div>
+            }
+          </div>
+        </div>
       </div>
     </div>
   )
