@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/highlow/static/css/main.305b751c.css",
-    "main.js": "/highlow/static/js/main.9fca3a99.js",
+    "main.css": "/highlow/static/css/main.df451a26.css",
+    "main.js": "/highlow/static/js/main.bcdbd507.js",
     "index.html": "/highlow/index.html",
-    "main.305b751c.css.map": "/highlow/static/css/main.305b751c.css.map",
-    "main.9fca3a99.js.map": "/highlow/static/js/main.9fca3a99.js.map"
+    "main.df451a26.css.map": "/highlow/static/css/main.df451a26.css.map",
+    "main.bcdbd507.js.map": "/highlow/static/js/main.bcdbd507.js.map"
   },
   "entrypoints": [
-    "static/css/main.305b751c.css",
-    "static/js/main.9fca3a99.js"
+    "static/css/main.df451a26.css",
+    "static/js/main.bcdbd507.js"
   ]
 }
