@@ -27,7 +27,6 @@ export default function App() {
   //function to set choices
   const higherChoice = () =>{
     setChoices("Higher");
-    // if(counter < rounds){
       if(Number(randomA) > Number(randomB)){
         setNote("You Lose! The 2nd Number is lower than the 1st Number.");
         setOut("Better Luck Next Time");
@@ -40,9 +39,6 @@ export default function App() {
         setScore(score+1);
         setHide(true);
       }
-    //}else {
-    //setHide(true) para sa controls para time out na
-    //}
   };
 
   const lowerChoice = () =>{
