@@ -77,7 +77,7 @@ h3, h5 {
 }
 
 .btn2 {
-    margin-left: 30%;
+    margin-left: 45px;
     outline: 0;
     border: none;
     box-shadow: none;
@@ -112,7 +112,7 @@ h3, h5 {
     border-bottom-right-radius: 12px;
 }
 .right p {
-    font-size: 45px;
+    font-size: 35px;
     text-align: center;
     font-weight: bold;
 }
@@ -125,9 +125,14 @@ h3, h5 {
 
 .inright {
     background-color: #0699ee;
-    margin: 15px;
+    margin: 5px 10px 0px 10px;
 }
 .inright p {
     text-align: center;
-    font-size: large;
+    font-size: 15px;
+}
+.score{
+    position: fixed;
+    top: 377px;
+    right: 520px;
 }

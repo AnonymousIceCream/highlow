@@ -14,6 +14,9 @@ export default function App() {
   const [randomA, setRandomA] = useState(randomizerA);
   const [randomB, setRandomB] = useState(randomizerB);
 
+  //const for score
+  const [score, setScore] = useState(0);
+
   //const for higher or lower
   const [choices, setChoices] = useState("");
 
@@ -24,16 +27,22 @@ export default function App() {
   //function to set choices
   const higherChoice = () =>{
     setChoices("Higher");
+    // if(counter < rounds){
       if(Number(randomA) > Number(randomB)){
         setNote("You Lose! The 2nd Number is lower than the 1st Number.");
         setOut("Better Luck Next Time");
         setHide(true);
+        //counter++
       }
       else if(Number(randomA) < Number(randomB)){
         setNote("You Win! The 2nd number is higher than the 1st number.");
         setOut("Another Round?");
+        setScore(score+1);
         setHide(true);
       }
+    //}else {
+    //setHide(true) para sa controls para time out na
+    //}
   };
 
   const lowerChoice = () =>{
@@ -41,6 +50,7 @@ export default function App() {
       if(Number(randomA) > Number(randomB)){
         setNote("You Win! The 2nd Number is lower than the 1st Number.");
         setOut("Another Round?");
+        setScore(score+1);
         setHide(true);
       }
       else if(Number(randomA) < Number(randomB)){
@@ -60,6 +70,16 @@ export default function App() {
     setRandomB(randomizerB);
   };
 
+  const resetGame = () => {
+    setHide(false);
+    setNote("");
+    setChoices("");
+    setOut("");
+    setRandomA(randomizerA);
+    setRandomB(randomizerB);
+    setScore(0);
+  }
+
   return (
     <div>
       {/* div for title and mechanics */}
@@ -78,13 +98,17 @@ export default function App() {
           {/* div for choices */}
           <div className="left">
             <p><span>The 1st Random Number is <u>{randomA}</u></span></p>
-            <button hidden = {hide} onClick={higherChoice} className="btn">Higher</button>
-            <button hidden = {hide} onClick={lowerChoice} className="btn">Lower</button>
+            <button hidden = {hide} value ="Higher" onClick={higherChoice} className="btn">Higher</button>
+            <button hidden = {hide} value ="Lower" onClick={lowerChoice} className="btn">Lower</button>
             {hide &&
-              <button onClick= {newGame} className="btn2">Try Again</button>
+            <div>
+              <button onClick= {newGame} className="btn2">New Game</button>
+              <button onClick= {resetGame} className="btn2">⟳</button>
+            </div>
             }
           </div>
           <div className="mid"></div>
+
           {/* div for output messages */}
           <div className="right">
             <p hidden = {hide}><span>Make Your Choice</span></p>
@@ -96,6 +120,9 @@ export default function App() {
                 {out}  
               </p></div>
             }
+            <div className="score">
+              <p>Score: {score}</p>
+            </div>
           </div>
         </div>
       </div>
